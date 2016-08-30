@@ -1,16 +1,15 @@
 {
   "author": {
-    "name": "Mario Micklisch",
-    "email": "mario@favo.org"
+    "name": "Guan Gui",
+    "email": "root@guiguan.net"
   },
   "license": "MIT",
-  "name": "ah-jwtauth2-plugin",
-  "description": "Implements JWT Authentication",
-  "version": "0.4.1",
-  "homepage": "http://favo.org",
+  "name": "ah-jwt-auth",
+  "description": "JWT Authentication Middleware for ActionHero",
+  "version": "0.4.2",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ifavo/ah-jwtauth-plugin.git"
+    "url": "git@github.com:guiguan/ah-jwt-auth"
   },
   "keywords": [
     "actionhero",
@@ -25,10 +24,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "scripts/postinstall.js"
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/ifavo/ah-jwtauth-plugin/issues"
+    "url": "https://github.com/guiguan/ah-jwt-auth/issues"
   }
 }

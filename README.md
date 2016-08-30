@@ -1,23 +1,21 @@
-# ah-jwtauth2-plugin
+<!--
+@Author: Guan Gui <guiguan>
+@Date:   2016-08-27T21:14:26+10:00
+@Email:  root@guiguan.net
+@Last modified by:   guiguan
+@Last modified time: 2016-08-30T16:39:51+10:00
+-->
 
-Uses auth0 node-jsonwebtoken to allow token authentication of actions, It is a really slimmed down version of panjiesw's plugin over at https://github.com/panjiesw/ah-auth-plugin as I didn't want to make the assumptions around users and email systems. 
-The original was developed by https://github.com/lookaflyingdonkey/ah-jwtauth-plugin and forked because of missing maintenance.
 
-## Installation
-`npm install ah-jwtauth2-plugin --save`
 
-Add the `ah-jwtauth2-plugin` plugin to your ActionHero `config/plugins.js`:
+# ah-jwt-auth
 
-    exports['default'] = {
-      general: function(api)
-      {
-        return {
-          plugins: [
-            'ah-jwtauth2-plugin'
-          ]
-        };
-      }
-    };
+JWT Authentication Middleware for ActionHero. Based on [ifavo/ah-jwtauth2-plugin](https://github.com/ifavo/ah-jwtauth-plugin) and original [lookaflyingdonkey/ah-jwtauth-plugin](https://github.com/lookaflyingdonkey/ah-jwtauth-plugin).
+
+## Installation & Setup
+* `npm install -S ah-jwt-auth`
+- Run `actionhero link --name=ah-jwt-auth` to register the Swagger Plugin in ActionHero 15+. [More details](http://www.actionherojs.com/docs/#including-plugins).
+- Make changes in `config/jwtAuth.js` accordingly
 
 ## Usage
 This plugin will check your action templates for a property called `authenticate`, if it exists and is true it will then require that a "Authorization" header has been sent with the request holding a valid JSON Web Token. I make use of the node-jsonwebtoken module (https://github.com/auth0/node-jsonwebtoken) to generate and validate the tokens.  
@@ -57,7 +55,7 @@ Tests can be done with mockHeaders when running actions:
 
 ### Generate a token
 You need to generate a token once a user has successfully authenticated against your API, this could be by signing in with a username/password or you could simply generate them through a CMS, print them out and post them to your users ;-)
- 
+
     api.jwtauth.generateToken({id: 1234, email: 'test@example.com'}, function(token) {
 
       // token will hold the generated token
@@ -100,7 +98,7 @@ Options are:
 
 
 I would suggest not storing a huge amount of information in them as it will just mean more data transferred per request, but you can put some identifying info like email, name, etc. The beauty of this is that you don't need to hit the database every time to authenticate a user.
-        
+
 ### Validate a token
 While the plugin will automatically validate a token and put it on the connection object for you as connection.user, you can also validate the tokens yourself like below.
 
