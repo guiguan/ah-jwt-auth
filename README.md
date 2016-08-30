@@ -3,10 +3,12 @@
 @Date:   2016-08-27T21:14:26+10:00
 @Email:  root@guiguan.net
 @Last modified by:   guiguan
-@Last modified time: 2016-08-30T16:39:51+10:00
+@Last modified time: 2016-08-30T16:48:25+10:00
 -->
 
 
+
+[![npm version](https://badge.fury.io/js/ah-jwt-auth.svg)](https://badge.fury.io/js/ah-jwt-auth)
 
 # ah-jwt-auth
 

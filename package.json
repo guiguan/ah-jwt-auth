@@ -6,7 +6,7 @@
   "license": "MIT",
   "name": "ah-jwt-auth",
   "description": "JWT Authentication Middleware for ActionHero",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:guiguan/ah-jwt-auth"
