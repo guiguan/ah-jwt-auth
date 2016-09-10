@@ -3,7 +3,7 @@
  * @Date:   2016-08-27T21:14:26+10:00
  * @Email:  root@guiguan.net
  * @Last modified by:   guiguan
- * @Last modified time: 2016-08-30T16:40:41+10:00
+ * @Last modified time: 2016-09-10T11:46:23+10:00
  */
 
 
@@ -19,7 +19,7 @@ exports.default = {
       },
       secret: api.config.general.serverToken + 'Change Me!',
       algorithm: 'HS512',
-      enableGet: true // enables token as GET parameters in addition to Authorization headers
+      enableParam: true // enables token as action param in addition to Authorization headers
     }
   }
 }
@@ -35,7 +35,7 @@ exports.test = {
       },
       secret: api.config.general.serverToken + 'Change Me!',
       algorithm: 'HS512',
-      enableGet: true // enables token as GET parameters in addition to Authorization headers
+      enableParam: true // enables token as action param in addition to Authorization headers
     }
   }
 }
@@ -51,7 +51,7 @@ exports.production = {
       },
       secret: api.config.general.serverToken + 'Change Me!',
       algorithm: 'HS512',
-      enableGet: true // enables token as GET parameters in addition to Authorization headers
+      enableParam: true // enables token as action param in addition to Authorization headers
     }
   }
 }
