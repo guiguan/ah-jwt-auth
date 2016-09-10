@@ -3,7 +3,7 @@
  * @Date:   2016-08-27T21:14:26+10:00
  * @Email:  root@guiguan.net
  * @Last modified by:   guiguan
- * @Last modified time: 2016-09-10T11:46:43+10:00
+ * @Last modified time: 2016-09-10T12:10:14+10:00
  */
 
 
@@ -105,9 +105,11 @@ module.exports = {
 
         // process token and save in connection
         else if (token) {
-          api.jwtauth.processToken(token, function(tokenData) {
-            data.connection._jwtToken = token;
-            data.connection._jwtTokenData = tokenData;
+          api.jwtauth.processToken(token, function(claims) {
+            data.connection.jwt = {
+              token,
+              claims
+            };
             next();
           }, next);
         } else {
